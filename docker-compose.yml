@@ -21,7 +21,7 @@ services:
       - ${THUMB_LOCATION}:/usr/src/app/upload/thumbs
       - /etc/localtime:/etc/localtime:ro
     env_file:
-      - .env
+      - stack.env
     ports:
       - 2283:2283
     depends_on:
@@ -48,7 +48,7 @@ services:
       - model-cache1:/cache
       - /dev/bus/usb:/dev/bus/usb
     env_file:
-      - .env
+      - stack.env
     #environment:
      # IMMICH_LOG_LEVEL: info
       
@@ -81,7 +81,7 @@ services:
       POSTGRES_DB: ${DB_DATABASE_NAME}
       POSTGRES_INITDB_ARGS: '--data-checksums'
     env_file:
-      - .env
+      - stack.env
     volumes:
       - ${DB_DATA_LOCATION}:/var/lib/postgresql/data
     #ports:
